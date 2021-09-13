@@ -24,23 +24,22 @@ public class scoreManager : MonoBehaviour
 		// Update is called once per frame
 		public void Update()
 		{
-
-		}
+        	
+    	}
 
 		public void incrementScore(){
 			Score++;
 		}
 
 		 public void StopScore(){
-		    //CancelInvoke("incrementScore");
 			PlayerPrefs.SetInt("Score",Score);
 			if(PlayerPrefs.HasKey("HighScore")){
 				if(Score>PlayerPrefs.GetInt("HighScore")){
-					PlayerPrefs.SetInt("HIghScore",Score);
+					PlayerPrefs.SetInt("HighScore",Score);
 				}
 			}
 		else{
-				PlayerPrefs.SetInt("HIghScore",Score);
+				PlayerPrefs.SetInt("HighScore",Score);
 			}
 		}
 	}

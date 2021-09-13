@@ -33,13 +33,12 @@ public class GameManager : MonoBehaviour
 		GameObject.Find ("pipeSpawner").GetComponent<pipeSpawner> ().startSpawning();
 
 	}
-	public void GameOver(){
+	public void GameOver()
+	{
 		
 		GameObject.Find ("pipeSpawner").GetComponent<pipeSpawner> ().stopSpawning();
 		scoreManager.instance.StopScore();
 		UiManager.instance.GameOverPanel();
-	
-
 
 	}
 }

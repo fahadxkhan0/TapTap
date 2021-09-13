@@ -27,15 +27,15 @@ public class ballController : MonoBehaviour{
         if(!started){
           if (Input.GetMouseButtonDown(0)){
             started = true;
-			readyText.GetComponent<Animator>().Play ("getready");
+			      readyText.GetComponent<Animator>().Play ("getready");
             rb.isKinematic = false;
-			GameManager.instance.GameStart();
+			      GameManager.instance.GameStart();
           }
         }
 		else if (started && !gameOver)
         {
 
-			transform.Rotate(0,0,Rotation);
+			  transform.Rotate(0,0,Rotation);
 
             if(Input.GetMouseButtonDown(0) ){
               rb.velocity = Vector2.zero;
@@ -53,8 +53,8 @@ public class ballController : MonoBehaviour{
 
 	void OnTriggerEnter2D(Collider2D col){
 
-		if(col.gameObject.tag == "scoreChecker" && !gameOver){
-			//GameObject.Find ("scoreManager").GetComponent<scoreManager> ().incrementScore();
+		if(col.gameObject.tag == "scoreChecker" && !gameOver)
+    {
 			scoreManager.instance.incrementScore();
 		}
 		
